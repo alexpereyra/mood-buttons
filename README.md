@@ -2,7 +2,13 @@
 
 simple website with buttons that play motivational clips based on mood or what is needed at particular moment when you need it the most.
 
-# resources
+## setup
+
+```
+npm install s3 
+```
+
+## resources
 
 - https://dabuttonfactory.com/
 
@@ -14,7 +20,7 @@ simple website with buttons that play motivational clips based on mood or what i
 
 - https://alexzywiak.github.io/streaming-audio-goodness-from-amazon-s3-to-the-clients-ears/index.html
 
-# dasher app
+## dasher app
 
 - did a fork of the dasher app repo to leverage amazon buttons
  https://github.com/maddox/dasher
