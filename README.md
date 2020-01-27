@@ -5,7 +5,7 @@ simple website with buttons that play motivational clips based on mood or what i
 ## setup
 
 ```
-npm install s3 
+npm install s3
 ```
 
 ## resources
@@ -20,7 +20,16 @@ npm install s3
 
 - https://alexzywiak.github.io/streaming-audio-goodness-from-amazon-s3-to-the-clients-ears/index.html
 
+- https://htmlcheatsheet.com/
+
 ## dasher app
 
 - did a fork of the dasher app repo to leverage amazon buttons
  https://github.com/maddox/dasher
+
+
+## react-native-audio-toolkit
+
+```
+npm install --save react-native-audio-toolkit
+```
