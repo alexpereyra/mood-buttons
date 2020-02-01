@@ -2,11 +2,16 @@
 
 simple website with buttons that play motivational clips based on mood or what is needed at particular moment when you need it the most.
 
-## setup
+## tasks
 
-```
-npm install s3
-```
+- button design. WIP. see `design.html`
+- ~~research solutions~~
+- ~~test `s3stream` java solution *never got this script to work correctly. will revisit.*~~
+- test amazon buttons using `dasher`
+  - ~~downloaded code~~
+- ~~uploaded sample mp3 to s3 bucket and tested s3 url within html using `audio controls src`~~
+- ~~test `aws-java.html` solution. *going to abandon this as to not waste time figuring java I don't fully understand yet*~~
+- create 2-3 sample snippets of some motivation clips I use often
 
 ## resources
 
@@ -28,8 +33,9 @@ npm install s3
  https://github.com/maddox/dasher
 
 
-## react-native-audio-toolkit
+## setup react-native-audio-toolkit
 
 ```
+npm install s3
 npm install --save react-native-audio-toolkit
 ```
