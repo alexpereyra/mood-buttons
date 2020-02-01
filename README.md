@@ -39,3 +39,8 @@ simple website with buttons that play motivational clips based on mood or what i
 npm install s3
 npm install --save react-native-audio-toolkit
 ```
+
+## audacity
+
+- See `audacity.md` as I will be taking notes there to document the steps I take
+- https://mood-buttons.s3.amazonaws.com/WHY.mp3
