@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+<audio id="my-audio" controls>
+  <source src="assets/WHY.mp3" type="audio/mpeg">
+</audio>
+
+<button onclick="cs_change_music('https://mood-buttons.s3.amazonaws.com/WHY.mp3');">WHY</button>
+<button onclick="cs_change_music('');">Play music 2</button>
+
+<script type="text/javascript">
+
+   function cs_change_music(music)
+   {
+
+     document.getElementById("my-audio").pause();
+     document.getElementById("my-audio").setAttribute('src', music);
+     document.getElementById("my-audio").load();
+     document.getElementById("my-audio").play();
+
+   }
+
+</script>
+</body>
+</html>
