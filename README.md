@@ -43,4 +43,3 @@ npm install --save react-native-audio-toolkit
 ## audacity
 
 - See `audacity.md` as I will be taking notes there to document the steps I take
-- https://mood-buttons.s3.amazonaws.com/WHY.mp3

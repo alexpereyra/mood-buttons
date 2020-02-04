@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+<audio id="my-audio" controls>
+  <source src="https://mood-buttons.s3.amazonaws.com/WHY.mp3" type="audio/mpeg">
+</audio>
+
+<div>
+
+<button onclick="cs_change_music('https://mood-buttons.s3.amazonaws.com/wake_up.mp3');">WAKE UP</button>
+<button onclick="cs_change_music('https://mood-buttons.s3.amazonaws.com/WHY.mp3');">WHY</button>
+<button onclick="cs_change_music('https://mood-buttons.s3.amazonaws.com/ManageYourMind.mp3');">Manage Your Mind</button>
+<button onclick="cs_change_music('https://mood-buttons.s3.amazonaws.com/NoOneWillOutAnythingMe.mp3');">No One Will Out Anything Me</button>
+<button onclick="cs_change_music('https://mood-buttons.s3.amazonaws.com/I_AM.mp3');">I AM</button>
+<button onclick="cs_change_music('https://mood-buttons.s3.amazonaws.com/A_FIGHTER.mp3');">A Fighter</button>
+
+</div>
+
+<script type="text/javascript">
+
+   function cs_change_music(music)
+   {
+
+     document.getElementById("my-audio").pause();
+     document.getElementById("my-audio").setAttribute('src', music);
+     document.getElementById("my-audio").load();
+     document.getElementById("my-audio").play();
+
+   }
+
+</script>
+</body>
+</html>
