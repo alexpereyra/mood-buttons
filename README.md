@@ -13,6 +13,11 @@ simple website with buttons that play motivational clips based on mood or what i
 - ~~test `aws-java.html` solution. *going to abandon this as to not waste time figuring java I don't fully understand yet*~~
 - create 2-3 sample snippets of some motivation clips I use often
 
+## commands
+
+aws s3 cp assets/${audio_file} s3://mood-buttons/
+aws s3 cp assets/${audio_file} s3://mind-pyramid/
+
 ## resources
 
 - https://dabuttonfactory.com/
