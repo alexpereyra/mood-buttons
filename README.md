@@ -15,7 +15,7 @@ simple website with buttons that play motivational clips based on mood or what i
 
 ## commands
 
-aws s3 cp assets/${audio_file} s3://mood-buttons/
+aws s3 cp assets/${audio_file} s3://mood-buttons/ --acl public-read
 aws s3 cp assets/${audio_file} s3://mind-pyramid/
 
 ## resources
