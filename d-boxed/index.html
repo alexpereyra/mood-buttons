@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS dependencies -->
+  <link rel="stylesheet" href="./styles/main.css">
+
+</head>
+<body>
+
+<audio id="my-audio" controls>
+  <source src="https://mood-buttons.s3.amazonaws.com/WHY.mp3" type="audio/mpeg">
+</audio>
+
+<div>
+
+<button class="favorite styled"
+        onclick="cs_change_music('https://mood-buttons.s3.amazonaws.com/wake_up.mp3');">WAKE UP
+</button>
+
+<button class="favorite styled"
+        onclick="cs_change_music('https://mood-buttons.s3.amazonaws.com/WHY.mp3');">WHY
+</button>
+
+<button class="favorite styled"
+        onclick="cs_change_music('https://mood-buttons.s3.amazonaws.com/ManageYourMind.mp3');">Manage Your Mind
+</button>
+
+</div>
+
+<div>
+
+<button class="favorite styled"
+        onclick="cs_change_music('https://mood-buttons.s3.amazonaws.com/NoOneWillOutAnythingMe.mp3');">No One Will Out Anything Me
+</button>
+
+<button class="favorite styled"
+        onclick="cs_change_music('https://mood-buttons.s3.amazonaws.com/I_AM.mp3');">I AM
+</button>
+
+</div>
+
+<div>
+
+<button class="favorite styled"
+        onclick="cs_change_music('https://mood-buttons.s3.amazonaws.com/A_FIGHTER.mp3');">A Fighter
+</button>
+
+<button class="favorite styled"
+        onclick="cs_change_music('https://mood-buttons.s3.amazonaws.com/PayAttentionToYourMusts.mp3');">Pay Attention To Your Musts
+</button>
+
+</div>
+
+<div>
+
+<button class="favorite styled"
+        onclick="cs_change_music('https://mood-buttons.s3.amazonaws.com/TakingSouls.mp3');">Taking Souls
+</button>
+
+<button class="favorite styled"
+        onclick="cs_change_music('https://mood-buttons.s3.amazonaws.com/YouGetWhatYouTolerate.mp3');">You Get What You Tolerate
+</button>
+
+</div>
+
+<div>
+
+<button class="favorite styled"
+        onclick="cs_change_music('https://mood-buttons.s3.amazonaws.com/YourMedievalMind.mp3');">Your Medieval Mind
+</button>
+
+<button class="favorite styled"
+        onclick="cs_change_music('https://mood-buttons.s3.amazonaws.com/love_conflict_accountability.mp3');">Love Conflict Accountability
+</button>
+
+</div>
+
+<div>
+
+<button class="favorite styled"
+        onclick="cs_change_music('https://mood-buttons.s3.amazonaws.com/EightySixThousandFourHundredSeconds.mp3');">86,400 seconds
+</button>
+
+<button class="favorite styled"
+        onclick="cs_change_music('https://mood-buttons.s3.amazonaws.com/54321.mp3');">5 4 3 2 1
+</button>
+
+</div>
+
+<div>
+
+  <button class="favorite styled"
+          onclick="cs_change_music('https://mood-buttons.s3.amazonaws.com/ItsPossible.mp3');">It's POSSIBLE!
+  </button>
+
+  <button class="favorite styled"
+          onclick="cs_change_music('https://mood-buttons.s3.amazonaws.com/DoWhatBeastsDo.mp3');">Do What Beasts Do
+  </button>
+
+</div>
+
+<div>
+
+  <button class="favorite styled"
+          onclick="cs_change_music('https://mood-buttons.s3.amazonaws.com/86400secondsPerspective.mp3');">86,400 seconds. Perspective is EVERYTHING
+  </button>
+
+</div>
+
+<div>
+
+  <button class="favorite styled"
+          onclick="cs_change_music('https://mood-buttons.s3.amazonaws.com/WhatIF.mp3');">WHAT IF?
+  </button>
+
+  <button class="favorite styled"
+          onclick="cs_change_music('https://mood-buttons.s3.amazonaws.com/NoRetreat.mp3');">No Retreat
+  </button>
+
+  <button class="favorite styled"
+          onclick="cs_change_music('https://mood-buttons.s3.amazonaws.com/TheDiscipline.mp3');">The Discipline
+  </button>
+
+</div>
+
+<div>
+
+<button class="favorite styled"
+        onclick="cs_change_music('https://mood-buttons.s3.amazonaws.com/FailForward.mp3');">Fail Forward
+</button>
+
+<button class="favorite styled"
+        onclick="cs_change_music('https://mood-buttons.s3.amazonaws.com/Tokio+Myers+London+Tune.mp3');">Tokio London Music
+</button>
+
+</div>
+
+<div>
+
+<button class="favorite styled"
+        onclick="cs_change_music('https://mood-buttons.s3.amazonaws.com/CharacterBuildingDay.mp3');">Character Building Day
+</button>
+
+</div>
+
+<div>
+
+<button class="favorite styled"
+        onclick="cs_change_music('https://mood-buttons.s3.amazonaws.com/ChoosingYourPath.mp3');">Choosing Your Path
+</button>
+
+</div>
+
+<script type="text/javascript">
+
+   function cs_change_music(music)
+   {
+
+     document.getElementById("my-audio").pause();
+     document.getElementById("my-audio").setAttribute('src', music);
+     document.getElementById("my-audio").load();
+     document.getElementById("my-audio").play();
+
+   }
+
+</script>
+</body>
+</html>
