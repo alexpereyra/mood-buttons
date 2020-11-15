@@ -68,14 +68,116 @@ class _MyHomePageState extends State<MyHomePage> {
                                       Session(name: "Pumpin' Uranium", date: new DateTime.utc(2020, 9, 22)),
                                       Session(name: "Something else funny", date: new DateTime.utc(2020, 7, 2))];
 
-  void _addSession() {
+  // Text editing controllers for all text fields
+  TextEditingController _nameController;
+
+  void initState() {
+    super.initState();
+    _nameController = TextEditingController();
+  }
+
+  void dispose() {
+    _nameController.dispose();
+    super.dispose();
+  }
+
+  // Callback for "plus" button
+  void _addSession() async {
+    Session newSession = new Session();
+    final _formKey = GlobalKey<FormState>();
+    
+    await showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return SimpleDialog(
+        title: const Text('Select assignment'),
+        children: <Widget>[
+          Form(
+            key: _formKey,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                TextFormField(
+                  controller: _nameController,
+                  decoration: const InputDecoration(
+                    hintText: 'Enter session name',
+                  ),
+                  validator: (value) {
+                    if (value.isEmpty) {
+                      return 'Please enter some text';
+                    }
+                    return null;
+                  },
+                ),
+                
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 16.0),
+            child: ElevatedButton(
+              onPressed: () {
+                // Validate will return true if the form is valid, or false if
+                // the form is invalid.
+                if (_formKey.currentState.validate()) {
+                  _sessions.insert(0,Session(name: _nameController.text, date: new DateTime.now()));
+                  Navigator.pop(context);
+                }
+              },
+              child: Text('Submit'),
+            ),
+          ),
+          // Text(
+          //   'Session Name',
+          //   textAlign: TextAlign.left,
+          //   overflow: TextOverflow.ellipsis,
+          //   style: TextStyle(fontWeight: FontWeight.bold),
+          // ),
+          // TextField(
+          //   decoration: InputDecoration(
+          //     border: OutlineInputBorder(),
+          //     labelText: 'Name',
+          //   ),
+          //   onEditingComplete: () {
+          //     newSession.name = value;
+          //   }
+          // ),
+          // RaisedButton(
+          //   onPressed: () {
+          //     _sessions.insert(0,Session(name: newSession.name, date: new DateTime.now()));
+          //     Navigator.pop(context);
+          //   },
+          //   textColor: Colors.white,
+          //   padding: const EdgeInsets.all(0.0),
+          //   child: Container(
+          //     decoration: const BoxDecoration(
+          //       color: Color(0xFF0D47A1),
+          //     ),
+          //     // padding: const EdgeInsets.all(10.0),
+          //     child:
+          //       const Text('Submit', style: TextStyle(fontWeight: FontWeight.bold)),
+          //   ),
+          // ),
+          // // SimpleDialogOption(
+          // //   onPressed: () { Navigator.pop(context, 0); },
+          // //   child: const Text('Treasury department'),
+          // // ),
+          // // SimpleDialogOption(
+          // //   onPressed: () { Navigator.pop(context,1); },
+          // //   child: const Text('State department'),
+          // // ),
+        ],
+      );
+      
+    });
     setState(() {
       // This call to setState tells the Flutter framework that something has
       // changed in this State, which causes it to rerun the build method below
       // so that the display can reflect the updated values. If we changed
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
-      _sessions.insert(0,Session(name: "New Practice", date: new DateTime.now()));
+      // _sessions.insert(0,Session(name: "New Practice", date: new DateTime.now()));
+      
     });
   }
 
