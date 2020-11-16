@@ -70,14 +70,23 @@ class _MyHomePageState extends State<MyHomePage> {
 
   // Text editing controllers for all text fields
   TextEditingController _nameController;
+  TextEditingController _dateController;
+  TextEditingController _hourController;
+  TextEditingController _minuteController;
 
   void initState() {
     super.initState();
     _nameController = TextEditingController();
+    _dateController = TextEditingController();
+    _hourController = TextEditingController();
+    _minuteController = TextEditingController();
   }
 
   void dispose() {
     _nameController.dispose();
+    _dateController.dispose();
+    _hourController.dispose();
+    _minuteController.dispose();
     super.dispose();
   }
 
@@ -85,6 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void _addSession() async {
     Session newSession = new Session();
     final _formKey = GlobalKey<FormState>();
+    final _formKey2 = GlobalKey<FormState>();
     
     await showDialog(
     context: context,
@@ -92,11 +102,63 @@ class _MyHomePageState extends State<MyHomePage> {
       return SimpleDialog(
         title: const Text('Select assignment'),
         children: <Widget>[
+          InputDatePickerFormField (
+            firstDate: new DateTime(0),
+            lastDate: new DateTime.now(),
+            initialDate: new DateTime.now(),
+            onDateSubmitted: (date) {
+              newSession.date = date;
+            }
+          ),
+          Form(
+            key: _formKey2,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                TextFormField(
+                  controller: _hourController,
+                  decoration: const InputDecoration(
+                    hintText: 'Enter hours',
+                  ),
+                  // initialValue: '0',
+                  validator: (value) {
+                    if (value.isEmpty) {
+                      return null;
+                    }
+                    else if(int.parse(value) == null) {
+                      return 'Must be a number';
+                    }
+                    return null;
+                  },
+                ),
+                TextFormField(
+                  controller: _minuteController,
+                  decoration: const InputDecoration(
+                    hintText: 'Enter minutes',
+                  ),
+                  // initialValue: '10',
+                  validator: (value) {
+                    if (value.isEmpty) {
+                      return null;
+                    }
+                    else if(int.parse(value) == null) {
+                      return 'Must be a number';
+                    }
+                    else if(int.parse(value) > 59) {
+                      return 'Minutes cannot be more than 60';
+                    }
+                    return null;
+                  },
+                ),
+              ],
+            ),
+          ),
           Form(
             key: _formKey,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
+                
                 TextFormField(
                   controller: _nameController,
                   decoration: const InputDecoration(
@@ -108,8 +170,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     }
                     return null;
                   },
-                ),
-                
+                ),                
               ],
             ),
           ),
@@ -127,45 +188,6 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text('Submit'),
             ),
           ),
-          // Text(
-          //   'Session Name',
-          //   textAlign: TextAlign.left,
-          //   overflow: TextOverflow.ellipsis,
-          //   style: TextStyle(fontWeight: FontWeight.bold),
-          // ),
-          // TextField(
-          //   decoration: InputDecoration(
-          //     border: OutlineInputBorder(),
-          //     labelText: 'Name',
-          //   ),
-          //   onEditingComplete: () {
-          //     newSession.name = value;
-          //   }
-          // ),
-          // RaisedButton(
-          //   onPressed: () {
-          //     _sessions.insert(0,Session(name: newSession.name, date: new DateTime.now()));
-          //     Navigator.pop(context);
-          //   },
-          //   textColor: Colors.white,
-          //   padding: const EdgeInsets.all(0.0),
-          //   child: Container(
-          //     decoration: const BoxDecoration(
-          //       color: Color(0xFF0D47A1),
-          //     ),
-          //     // padding: const EdgeInsets.all(10.0),
-          //     child:
-          //       const Text('Submit', style: TextStyle(fontWeight: FontWeight.bold)),
-          //   ),
-          // ),
-          // // SimpleDialogOption(
-          // //   onPressed: () { Navigator.pop(context, 0); },
-          // //   child: const Text('Treasury department'),
-          // // ),
-          // // SimpleDialogOption(
-          // //   onPressed: () { Navigator.pop(context,1); },
-          // //   child: const Text('State department'),
-          // // ),
         ],
       );
       
