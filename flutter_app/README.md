@@ -30,3 +30,5 @@ Ref [stackoverflow](https://stackoverflow.com/questions/26519394/permissions-err
 ###
 - Install SDK
 brew cask install android-platform-tools
+
+### [Build and release an iOS app](https://flutter.dev/docs/deployment/ios)
